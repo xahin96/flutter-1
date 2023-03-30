@@ -50,6 +50,25 @@ class HomeActivity extends StatelessWidget {
           notificationOnClick('Add clicked', context);
         },
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Contact'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
+        onTap: (int index){
+          if(index == 0){
+            notificationOnClick('Home bottom menu', context);
+          }
+          if(index == 1){
+            notificationOnClick('Contact bottom menu', context);
+          }
+          if(index == 2){
+            notificationOnClick('Profile bottom menu', context);
+          }
+        },
+      ),
     );
   }
 }
