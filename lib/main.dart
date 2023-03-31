@@ -41,21 +41,41 @@ class HomeActivity extends StatelessWidget {
               icon: const Icon(Icons.notifications))
         ],
       ),
-      body: Container(
-        height: 250,
-        width: 250,
-        alignment: Alignment.center,
-        margin: EdgeInsets.fromLTRB(40, 90, 10, 40),
-        padding: EdgeInsets.all(40),
-        child: Text('Container'),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.black38,
-            width: 6
-          ),
-          color: Colors.indigo
+      body: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+        Container(
+          height: 100,
+          width: 100,
+          alignment: Alignment.center,
+          margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          padding: EdgeInsets.all(10),
+          child: Text('Container'),
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.black38, width: 6),
+              color: Colors.indigo),
         ),
-      ),
+        Container(
+          height: 100,
+          width: 100,
+          alignment: Alignment.center,
+          margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          padding: EdgeInsets.all(10),
+          child: Text('Container'),
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.black38, width: 6),
+              color: Colors.indigo),
+        ),
+        Container(
+          height: 100,
+          width: 100,
+          alignment: Alignment.center,
+          margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          padding: EdgeInsets.all(10),
+          child: Text('Container'),
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.black38, width: 6),
+              color: Colors.indigo),
+        ),
+      ]),
       floatingActionButton: FloatingActionButton(
         elevation: 10,
         child: const Icon(Icons.add),
