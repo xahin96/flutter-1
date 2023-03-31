@@ -105,6 +105,43 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
+      endDrawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+                padding: EdgeInsets.all(0),
+                child: UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(color: Colors.brown),
+                  accountName: Text('Zahin'),
+                  accountEmail: Text('xahin96@gmail.com'),
+                  currentAccountPicture: Image.network(
+                      'https://avatars.githubusercontent.com/u/28812308?v=4'),
+                )),
+            ListTile(
+              title: const Text('Home'),
+              leading: const Icon(Icons.home),
+              onTap: () {
+                notificationOnClick('Drawer home', context);
+              },
+            ),
+            ListTile(
+              title: const Text('Contact'),
+              leading: const Icon(Icons.message),
+              onTap: () {
+                notificationOnClick('Drawer contact', context);
+              },
+            ),
+            ListTile(
+              title: const Text('Profile'),
+              leading: const Icon(Icons.person_2),
+              onTap: () {
+                notificationOnClick('Drawer person', context);
+              },
+            ),
+          ],
+        ),
+      ),
+
     );
   }
 }
