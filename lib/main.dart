@@ -28,6 +28,8 @@ class HomeActivity extends StatelessWidget {
         .showSnackBar(SnackBar(content: Text(message)));
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,40 +43,53 @@ class HomeActivity extends StatelessWidget {
               icon: const Icon(Icons.notifications))
         ],
       ),
-      body: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-        Container(
-          height: 100,
-          width: 100,
-          alignment: Alignment.center,
-          margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          padding: EdgeInsets.all(10),
-          child: Text('Container'),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.black38, width: 6),
-              color: Colors.indigo),
-        ),
-        Container(
-          height: 100,
-          width: 100,
-          alignment: Alignment.center,
-          margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          padding: EdgeInsets.all(10),
-          child: Text('Container'),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.black38, width: 6),
-              color: Colors.indigo),
-        ),
-        Container(
-          height: 100,
-          width: 100,
-          alignment: Alignment.center,
-          margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          padding: EdgeInsets.all(10),
-          child: Text('Container'),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.black38, width: 6),
-              color: Colors.indigo),
-        ),
+      body: Column(children: <Widget>[
+        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          Container(
+            height: 100,
+            width: 100,
+            alignment: Alignment.center,
+            margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            padding: EdgeInsets.all(10),
+            child: Text('Container'),
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black38, width: 6),
+                color: Colors.indigo),
+          ),
+          Container(
+            height: 100,
+            width: 100,
+            alignment: Alignment.center,
+            margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            padding: EdgeInsets.all(10),
+            child: Text('Container'),
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black38, width: 6),
+                color: Colors.indigo),
+          ),
+          Container(
+            height: 100,
+            width: 100,
+            alignment: Alignment.center,
+            margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            padding: EdgeInsets.all(10),
+            child: Text('Container'),
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black38, width: 6),
+                color: Colors.indigo),
+          ),
+        ]),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          TextButton(onPressed: () {
+            notificationOnClick('I am text button', context);
+          }, child: const Text('Text Button')),
+          ElevatedButton(onPressed: () {
+            notificationOnClick('I am elevated button', context);
+          }, child: const Text('Elevated Button')),
+          OutlinedButton(onPressed: () {
+            notificationOnClick('I am outlined button', context);
+          }, child: const Text('Outlined Button'))
+        ])
       ]),
       floatingActionButton: FloatingActionButton(
         elevation: 10,
