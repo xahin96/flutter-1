@@ -28,8 +28,6 @@ class HomeActivity extends StatelessWidget {
         .showSnackBar(SnackBar(content: Text(message)));
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,6 +76,17 @@ class HomeActivity extends StatelessWidget {
                 border: Border.all(color: Colors.black38, width: 6),
                 color: Colors.indigo),
           ),
+        ]),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          TextButton(onPressed: () {
+            notificationOnClick('I am text button', context);
+          }, child: const Text('Text Button')),
+          ElevatedButton(onPressed: () {
+            notificationOnClick('I am elevated button', context);
+          }, child: const Text('Elevated Button')),
+          OutlinedButton(onPressed: () {
+            notificationOnClick('I am outlined button', context);
+          }, child: const Text('Outlined Button'))
         ]),
         Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           TextButton(onPressed: () {
