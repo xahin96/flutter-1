@@ -28,16 +28,37 @@ class HomeActivity extends StatelessWidget {
         .showSnackBar(SnackBar(content: Text(message)));
   }
 
+  myAlertDialog(context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Expanded(
+              child: AlertDialog(
+            title: Text('Alert'),
+            content: Text('Do you want to delete?'),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    notificationOnClick('hi', context);
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('Yes')),
+              TextButton(onPressed: () {
+                Navigator.of(context).pop();
+              }, child: const Text('No'))
+            ],
+          ));
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-      padding: const EdgeInsets.only(left: 5, top: 25, right: 5, bottom: 25),
-      backgroundColor: Colors.deepPurple,
-      foregroundColor: CupertinoColors.lightBackgroundGray,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10))
-      )
-    );
+        padding: const EdgeInsets.only(left: 5, top: 25, right: 5, bottom: 25),
+        backgroundColor: Colors.deepPurple,
+        foregroundColor: CupertinoColors.lightBackgroundGray,
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10))));
     return Scaffold(
       appBar: AppBar(
         title: const Text('First Application'),
@@ -86,27 +107,27 @@ class HomeActivity extends StatelessWidget {
           ),
         ]),
         Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          TextButton(
-            onPressed: () {
-              notificationOnClick('I am text button', context);
-            },
-            style: buttonStyle,
-            child: const Text('Text Button'),
-          ),
+          // TextButton(
+          //   onPressed: () {
+          //     notificationOnClick('I am text button', context);
+          //   },
+          //   style: buttonStyle,
+          //   child: const Text('Text Button'),
+          // ),
           ElevatedButton(
             onPressed: () {
-              notificationOnClick('I am elevated button', context);
+              myAlertDialog(context);
             },
             style: buttonStyle,
-            child: const Text('Elevated Button'),
+            child: const Text('Show Alert'),
           ),
-          OutlinedButton(
-            onPressed: () {
-              notificationOnClick('I am outlined button', context);
-            },
-            style: buttonStyle,
-            child: const Text('Outlined Button'),
-          )
+          // OutlinedButton(
+          //   onPressed: () {
+          //     notificationOnClick('I am outlined button', context);
+          //   },
+          //   style: buttonStyle,
+          //   child: const Text('Outlined Button'),
+          // )
         ]),
       ]),
       floatingActionButton: FloatingActionButton(
