@@ -30,6 +30,14 @@ class HomeActivity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      padding: const EdgeInsets.only(left: 5, top: 25, right: 5, bottom: 25),
+      backgroundColor: Colors.deepPurple,
+      foregroundColor: CupertinoColors.lightBackgroundGray,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10))
+      )
+    );
     return Scaffold(
       appBar: AppBar(
         title: const Text('First Application'),
@@ -78,27 +86,28 @@ class HomeActivity extends StatelessWidget {
           ),
         ]),
         Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          TextButton(onPressed: () {
-            notificationOnClick('I am text button', context);
-          }, child: const Text('Text Button')),
-          ElevatedButton(onPressed: () {
-            notificationOnClick('I am elevated button', context);
-          }, child: const Text('Elevated Button')),
-          OutlinedButton(onPressed: () {
-            notificationOnClick('I am outlined button', context);
-          }, child: const Text('Outlined Button'))
+          TextButton(
+            onPressed: () {
+              notificationOnClick('I am text button', context);
+            },
+            style: buttonStyle,
+            child: const Text('Text Button'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              notificationOnClick('I am elevated button', context);
+            },
+            style: buttonStyle,
+            child: const Text('Elevated Button'),
+          ),
+          OutlinedButton(
+            onPressed: () {
+              notificationOnClick('I am outlined button', context);
+            },
+            style: buttonStyle,
+            child: const Text('Outlined Button'),
+          )
         ]),
-        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          TextButton(onPressed: () {
-            notificationOnClick('I am text button', context);
-          }, child: const Text('Text Button')),
-          ElevatedButton(onPressed: () {
-            notificationOnClick('I am elevated button', context);
-          }, child: const Text('Elevated Button')),
-          OutlinedButton(onPressed: () {
-            notificationOnClick('I am outlined button', context);
-          }, child: const Text('Outlined Button'))
-        ])
       ]),
       floatingActionButton: FloatingActionButton(
         elevation: 10,
