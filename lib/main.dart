@@ -43,9 +43,11 @@ class HomeActivity extends StatelessWidget {
                     Navigator.of(context).pop();
                   },
                   child: const Text('Yes')),
-              TextButton(onPressed: () {
-                Navigator.of(context).pop();
-              }, child: const Text('No'))
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('No'))
             ],
           ));
         });
@@ -54,6 +56,7 @@ class HomeActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      minimumSize: Size(double.infinity, 60),
         padding: const EdgeInsets.only(left: 5, top: 25, right: 5, bottom: 25),
         backgroundColor: Colors.deepPurple,
         foregroundColor: CupertinoColors.lightBackgroundGray,
@@ -70,164 +73,38 @@ class HomeActivity extends StatelessWidget {
               icon: const Icon(Icons.notifications))
         ],
       ),
-      body: Column(children: <Widget>[
-        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          Container(
-            height: 100,
-            width: 100,
-            alignment: Alignment.center,
-            margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
             padding: EdgeInsets.all(10),
-            child: Text('Container'),
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.black38, width: 6),
-                color: Colors.indigo),
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(), labelText: 'First Name'),
+            ),
           ),
-          Container(
-            height: 100,
-            width: 100,
-            alignment: Alignment.center,
-            margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          Padding(
             padding: EdgeInsets.all(10),
-            child: Text('Container'),
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.black38, width: 6),
-                color: Colors.indigo),
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(), labelText: 'Last Name'),
+            ),
           ),
-          Container(
-            height: 100,
-            width: 100,
-            alignment: Alignment.center,
-            margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          Padding(
             padding: EdgeInsets.all(10),
-            child: Text('Container'),
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.black38, width: 6),
-                color: Colors.indigo),
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(), labelText: 'Email Address'),
+            ),
           ),
-        ]),
-        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          // TextButton(
-          //   onPressed: () {
-          //     notificationOnClick('I am text button', context);
-          //   },
-          //   style: buttonStyle,
-          //   child: const Text('Text Button'),
-          // ),
-          ElevatedButton(
-            onPressed: () {
-              myAlertDialog(context);
-            },
-            style: buttonStyle,
-            child: const Text('Show Alert'),
-          ),
-          // OutlinedButton(
-          //   onPressed: () {
-          //     notificationOnClick('I am outlined button', context);
-          //   },
-          //   style: buttonStyle,
-          //   child: const Text('Outlined Button'),
-          // )
-        ]),
-      ]),
-      floatingActionButton: FloatingActionButton(
-        elevation: 10,
-        child: const Icon(Icons.add),
-        backgroundColor: Colors.black54,
-        onPressed: () {
-          notificationOnClick('Add clicked', context);
-        },
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Contact'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          Padding(
+              padding: EdgeInsets.all(10),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text('Submit'),
+                style: buttonStyle,
+              )),
         ],
-        onTap: (int index) {
-          if (index == 0) {
-            notificationOnClick('Home bottom menu', context);
-          }
-          if (index == 1) {
-            notificationOnClick('Contact bottom menu', context);
-          }
-          if (index == 2) {
-            notificationOnClick('Profile bottom menu', context);
-          }
-        },
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(
-                padding: EdgeInsets.all(0),
-                child: UserAccountsDrawerHeader(
-                  decoration: BoxDecoration(color: Colors.brown),
-                  accountName: Text('Zahin'),
-                  accountEmail: Text('xahin96@gmail.com'),
-                  currentAccountPicture: Image.network(
-                      'https://avatars.githubusercontent.com/u/28812308?v=4'),
-                )),
-            ListTile(
-              title: const Text('Home'),
-              leading: const Icon(Icons.home),
-              onTap: () {
-                notificationOnClick('Drawer home', context);
-              },
-            ),
-            ListTile(
-              title: const Text('Contact'),
-              leading: const Icon(Icons.message),
-              onTap: () {
-                notificationOnClick('Drawer contact', context);
-              },
-            ),
-            ListTile(
-              title: const Text('Profile'),
-              leading: const Icon(Icons.person_2),
-              onTap: () {
-                notificationOnClick('Drawer person', context);
-              },
-            ),
-          ],
-        ),
-      ),
-      endDrawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(
-                padding: EdgeInsets.all(0),
-                child: UserAccountsDrawerHeader(
-                  decoration: BoxDecoration(color: Colors.brown),
-                  accountName: Text('Zahin'),
-                  accountEmail: Text('xahin96@gmail.com'),
-                  currentAccountPicture: Image.network(
-                      'https://avatars.githubusercontent.com/u/28812308?v=4'),
-                )),
-            ListTile(
-              title: const Text('Home'),
-              leading: const Icon(Icons.home),
-              onTap: () {
-                notificationOnClick('Drawer home', context);
-              },
-            ),
-            ListTile(
-              title: const Text('Contact'),
-              leading: const Icon(Icons.message),
-              onTap: () {
-                notificationOnClick('Drawer contact', context);
-              },
-            ),
-            ListTile(
-              title: const Text('Profile'),
-              leading: const Icon(Icons.person_2),
-              onTap: () {
-                notificationOnClick('Drawer person', context);
-              },
-            ),
-          ],
-        ),
       ),
     );
   }
