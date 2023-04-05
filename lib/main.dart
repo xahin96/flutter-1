@@ -43,9 +43,11 @@ class HomeActivity extends StatelessWidget {
                     Navigator.of(context).pop();
                   },
                   child: const Text('Yes')),
-              TextButton(onPressed: () {
-                Navigator.of(context).pop();
-              }, child: const Text('No'))
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('No'))
             ],
           ));
         });
@@ -54,6 +56,7 @@ class HomeActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      minimumSize: Size(double.infinity, 60),
         padding: const EdgeInsets.only(left: 5, top: 25, right: 5, bottom: 25),
         backgroundColor: Colors.deepPurple,
         foregroundColor: CupertinoColors.lightBackgroundGray,
@@ -70,8 +73,39 @@ class HomeActivity extends StatelessWidget {
               icon: const Icon(Icons.notifications))
         ],
       ),
-      body: Column(children: <Widget>[
-      ]),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(), labelText: 'First Name'),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(), labelText: 'Last Name'),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(), labelText: 'Email Address'),
+            ),
+          ),
+          Padding(
+              padding: EdgeInsets.all(10),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text('Submit'),
+                style: buttonStyle,
+              )),
+        ],
+      ),
     );
   }
 }
