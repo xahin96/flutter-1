@@ -91,7 +91,7 @@ class HomeActivity extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(12),
+            padding: EdgeInsets.all(10),
             child: TextField(
               decoration: InputDecoration(
                   border: OutlineInputBorder(), labelText: 'Email Address'),
