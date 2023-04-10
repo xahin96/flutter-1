@@ -101,7 +101,7 @@ class HomeActivity extends StatelessWidget {
               padding: EdgeInsets.all(10),
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text('Submit form'),
+                child: Text('Submit'),
                 style: buttonStyle,
               )),
         ],
