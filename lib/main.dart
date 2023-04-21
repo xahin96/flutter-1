@@ -42,12 +42,12 @@ class HomeActivity extends StatelessWidget {
                     notificationOnClick('hi', context);
                     Navigator.of(context).pop();
                   },
-                  child: const Text('Yes')),
+                  child: const Text('Yes!')),
               TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: const Text('No'))
+                  child: const Text('No!'))
             ],
           ));
         });
