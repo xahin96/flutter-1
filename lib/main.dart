@@ -80,21 +80,21 @@ class HomeActivity extends StatelessWidget {
             padding: EdgeInsets.all(10),
             child: TextField(
               decoration: InputDecoration(
-                  border: OutlineInputBorder(), labelText: 'First Name'),
+                  border: OutlineInputBorder(), labelText: 'First name'),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10),
             child: TextField(
               decoration: InputDecoration(
-                  border: OutlineInputBorder(), labelText: 'Last Name'),
+                  border: OutlineInputBorder(), labelText: 'Last name'),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10),
             child: TextField(
               decoration: InputDecoration(
-                  border: OutlineInputBorder(), labelText: 'Email Address'),
+                  border: OutlineInputBorder(), labelText: 'Email address'),
             ),
           ),
           Padding(
