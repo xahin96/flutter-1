@@ -109,7 +109,7 @@ class HomeActivity extends StatelessWidget {
             padding: EdgeInsets.all(10),
             child: TextField(
               decoration: InputDecoration(
-                  border: OutlineInputBorder(), labelText: 'Current address'),
+                  border: OutlineInputBorder(), labelText: 'Current addr'),
             ),
           ),
           Padding(
